@@ -3,8 +3,8 @@
 
 
 library(tidyverse)
-library(tidycensus)
-library(sf)
+library(tidycensus) # get census data
+library(sf) # simple feature dataframe
 library(kableExtra)
 
 options(scipen=999)
@@ -71,7 +71,7 @@ palette5 <- c("#f0f9e8","#bae4bc","#7bccc4","#43a2ca","#0868ac")
 View(load_variables(2000,'sf3',cache = TRUE))
 
 # Install A CENSUS API Key
-census_api_key("a7edab3d7c3df571998caab5a3cc12a4ec8d8b61" , install = TRUE, overwrite  = TRUE)
+census_api_key("a7edab3d7c3df571998caab5a3cc12a4ec8d8b61" ,  overwrite  = TRUE)
 readRenviron("~/.Renviron")
 # You can check it with:
 Sys.getenv("CENSUS_API_KEY")
