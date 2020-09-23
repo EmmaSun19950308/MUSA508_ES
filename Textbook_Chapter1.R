@@ -68,6 +68,7 @@ palette5 <- c("#f0f9e8","#bae4bc","#7bccc4","#43a2ca","#0868ac")
 
 
 # 1.2.1 Downloading and wrangling Census data
+# sf3 is a decennial census summary form
 View(load_variables(2000,'sf3',cache = TRUE))
 
 # Install A CENSUS API Key

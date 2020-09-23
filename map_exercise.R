@@ -1,40 +1,8 @@
-myData  <- rbind(selectCentroids, clip) %>%
-  rbind(., selection)
 
-  ggplot(myData)+
-  geom_sf(data = st_union(tracts09))+
-  geom_sf(aes(fill = q5(TotalPop))) +
-  scale_fill_manual(values = palette5,
-                    labels = qBr(myData, "TotalPop"),
-                    name = "Popluation\n(Quintile Breaks)") +
-  labs(title = "Total Population", subtitle = "Philadelphia; 2009") +
-  facet_wrap(~Selection_Type)+
-  mapTheme() + 
-  theme(plot.title = element_text(size=22))
-  
   
   # 1.3.1 Maps
   
-  ggplot(allTracts.group)+
-    geom_sf(data = st_union(tracts09))+
-    geom_sf(aes(fill = TOD)) +
-    labs(title = "Time/Space Groups") +
-    facet_wrap(~year)+
-    mapTheme() + 
-    theme(plot.title = element_text(size=22))
-  
-  
-  ggplot(allTracts.group)+
-    geom_sf(data = st_union(tracts09))+
-    geom_sf(aes(fill = q5(MedRent.inf))) +
-    geom_sf(data = buffer, fill = "transparent", color = "red")+
-    scale_fill_manual(values = palette5,
-                      labels = qBr(allTracts.group, "MedRent.inf"),
-                      name = "Rent\n(Quintile Breaks)") +
-    labs(title = "Median Rent 2009-2017", subtitle = "Real Dollars") +
-    facet_wrap(~year)+
-    mapTheme() + 
-    theme(plot.title = element_text(size=22))
+
   
   #1.4 Submarkets
   
